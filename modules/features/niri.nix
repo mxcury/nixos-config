@@ -2,16 +2,16 @@
   flake.nixosModules.niri = { pkgs, lib, ... }: {
     programs.niri = {
       enable = true;
-      package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
+      package = self.packages.${pkgs.stdenv.hostPlatform.system}.niri-wrapped;
     };
   };
 
   perSystem = { pkgs, lib, self', ... }: {
-    packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
-      inherit pkgs; # THIS PART IS VERY IMPORTAINT, I FORGOT IT IN THE VIDEO!!!
+    packages.niri-wrapped = inputs.wrapper-modules.wrappers.niri.wrap {
+      inherit pkgs;
       settings = {
         spawn-at-startup = [
-          (lib.getExe self'.packages.myNoctalia)
+          (lib.getExe self'.packages.noctalia-wrapped)
         ];
 
 	environment."LIBGL_ALWAYS_SOFTWARE" = "1";
