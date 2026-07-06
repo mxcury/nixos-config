@@ -28,7 +28,7 @@
       packages = with pkgs; [ ];
     };
 
-    programs.brave.enable = true;
+    programs.firefox.enable = true;
 
     nixpkgs.config.allowUnfree = true;
 
