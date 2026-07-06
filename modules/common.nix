@@ -1,7 +1,7 @@
 { self, inputs, ... }: {
   flake.nixosModules.common = { pkgs, lib, ... }: {
     imports = [
-      self.nixosModules.niri
+      self.nixosModules.greetd
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
