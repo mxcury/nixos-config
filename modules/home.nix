@@ -1,4 +1,8 @@
 { self, inputs, ... }: {
+  imports = [
+    inputs.home-manager.flakeModules.home-manager
+  ];
+
   flake.nixosModules.homeManagerSetup = {pkgs, lib, config, ... }: {
     imports = [
       inputs.home-manager.nixosModules.home-manager
