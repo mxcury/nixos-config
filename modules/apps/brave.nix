@@ -16,7 +16,9 @@
       };
 
       extensions = [
-        {id = ""; }
+        {id = "ghmbeldphafepmbegfdlkpapadhbakde"; } # Proton Pass
+        {id = "epcnnfbjfcgphgdmggkamkmgojdagdnn"; } # UBlock Origin
+        {id = "mnjggcdmjocbbbhaepdhchncahnbgone"; } # Sponsor Block
       ];
     };
   };
