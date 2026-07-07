@@ -46,7 +46,7 @@
           {
             "characterCount": 2,
             "colorizeIcons": false,
-            "emptyColor": "secondary",
+            "emptyColor": "none",
             "enableScrollWheel": false,
             "focusedColor": "tertiary",
             "followFocusedScreen": false,
@@ -622,6 +622,18 @@
         {
           "enabled": true,
           "id": "yazi"
+        },
+        {
+          "enabled": true,
+          "id": "alacritty"
+        },
+        {
+          "enabled": true,
+          "id": "gtk"
+        },
+        {
+          "enabled": true,
+          "id": "cava"
         }
       ],
       "enableUserTheming": false
@@ -685,7 +697,7 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "Virtual-1": "/home/dev/Pictures/Wallpapers/wallhaven_j88pom.jpg"
+      "Virtual-1": "/home/dev/Pictures/Wallpapers/wallhaven_l3kk8q.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
