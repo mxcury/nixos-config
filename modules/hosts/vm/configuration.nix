@@ -13,6 +13,11 @@
 
     networking.hostName = "vm";
 
+    programs.nh.flake = "/home/dev/dotfiles";
+    environment.sessionVariables = {
+      FLAKE = "/home/dev/dotfiles";
+    };
+
     time.timeZone = "Europe/London";
 
     i18n.defaultLocale = "en_GB.UTF-8";
