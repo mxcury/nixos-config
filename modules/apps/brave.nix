@@ -5,7 +5,8 @@
       package = pkgs.brave;
       commandLineArgs = [
         "--force-dark-mode"
-        "--enable-features=WebUIDarkMode"
+        "--enable-features=WebUIDarkMode,UseOzonePlatform"
+	"--ozone-platform-hint=auto"
       ];
 
       extensions = [
