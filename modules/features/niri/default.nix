@@ -22,7 +22,14 @@
 
         layout.gaps = 5;
 
-        binds = import ./binds.nix { inherit lib pkgs self'; };
+        hotkey-overlay.skip-at-startup = true;
+
+        window-rule = {
+          geometry-corner-radius = 12;
+          clip-to-geometry = true;
+        };
+
+        binds = import ./_binds.nix { inherit lib pkgs self'; };
       };
     };
   };
