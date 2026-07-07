@@ -45,6 +45,19 @@
 
     nixpkgs.config.allowUnfree = true;
 
+    programs.nh = {
+      enable = true;
+      clean = {
+        enable = true;
+        extraArgs = "--keep-since 7d --keep 3";
+      };
+    };
+
+    programs.nix-index = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
     environment.systemPackages = with pkgs; [
       git
     ];
