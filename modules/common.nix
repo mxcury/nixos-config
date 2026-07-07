@@ -50,6 +50,14 @@
 
     nixpkgs.config.allowUnfree = true;
 
+    programs.steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+      remotePlay.openFirewall = true;
+    };
+
+    programs.gamemode.enable = true;
+
     programs.nh = {
       enable = true;
       clean = {

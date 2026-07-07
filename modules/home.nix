@@ -24,7 +24,8 @@
         ];
 
         home.packages = with pkgs; [
-
+          fd
+          discord
         ];
       };
     };
