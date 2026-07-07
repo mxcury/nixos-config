@@ -2,6 +2,7 @@
   flake.nixosModules.common = { pkgs, lib, ... }: {
     imports = [
       self.nixosModules.greetd
+      self.nixosModules.homeManagerSetup
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -60,6 +61,7 @@
 
     environment.systemPackages = with pkgs; [
       git
+      nix-output-monitor
     ];
 
     system.stateVersion = "26.05";

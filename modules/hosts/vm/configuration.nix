@@ -13,9 +13,9 @@
 
     networking.hostName = "vm";
 
-    programs.nh.flake = "/home/dev/dotfiles";
+    programs.nh.flake = "/home/dev/.dotfiles/nixos";
     environment.sessionVariables = {
-      FLAKE = "/home/dev/dotfiles";
+      FLAKE = "/home/dev/.dotfiles/nixos";
     };
 
     time.timeZone = "Europe/London";
