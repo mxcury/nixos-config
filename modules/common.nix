@@ -19,6 +19,10 @@
       packages = with pkgs; [ terminus_font ];
     };
 
+    fonts.packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+    ];
+
     networking.networkmanager.enable = true;
 
     services.printing.enable = true; 
@@ -38,8 +42,6 @@
       extraGroups = [ "networkmanager" "wheel" ];
       packages = with pkgs; [ ];
     };
-
-    programs.firefox.enable = true;
 
     nixpkgs.config.allowUnfree = true;
 
