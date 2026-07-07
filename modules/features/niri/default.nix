@@ -22,11 +22,7 @@
 
         layout.gaps = 5;
 
-        binds = {
-          "Mod+Return".spawn-sh = lib.getExe pkgs.alacritty;
-          "Mod+Q".close-window = _: { };
-          "Mod+S".spawn-sh = "${lib.getExe self'.packages.noctalia-wrapped} ipc call launcher toggle";
-        };
+        binds = import ./binds.nix { inherit lib pkgs self'; };
       };
     };
   };
