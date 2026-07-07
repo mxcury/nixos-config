@@ -19,7 +19,7 @@
         input.keyboard.xkb.layout = "us,ua";
         hotkey-overlay.skip-at-startup = true;
 
-        # 1. Global Blur Settings (Standard single-value nodes, serializes perfectly)
+        # 1. Global Blur Settings
         blur = {
           passes = 3;
           offset = 3.0;
@@ -27,15 +27,21 @@
           saturation = 1.2;
         };
 
-        # 2. Clean Layout, Gaps, and Solid Aesthetic Focus Rings
-        # Removed the 'border' block entirely so it safely defaults to off.
+        # 2. Layout, Gaps, and Wallpaper-Themed Gradient Focus Rings
         layout = {
           gaps = 12; 
           
           focus-ring = {
             width = 2;
-            active-color = "#cba6f7";   # Gorgeous solid pastel lavender
-            inactive-color = "#1e1e2e"; # Deep dark slate for unfocused windows
+            # FIX: Using 'props' forces these to render inline as Niri expects
+            active-gradient = _: {
+              props = {
+                from = "#cba6f7";
+                to = "#89b4fa";
+                angle = 45;
+              };
+            };
+            inactive-color = "#1e1e2e";
           };
         };
 
@@ -52,20 +58,24 @@
           };
         };
 
-        # 4. Window Rules (Global Rounding + Terminal Blur)
+        # 4. Window Rules (Combining Global Rules + Terminal Blur)
         window-rule = [
           {
-            # Global corner rounding & window content clipping
+            # Global Rule: Applied to ALL windows
             geometry-corner-radius = 12;
             clip-to-geometry = true;
           }
           {
-            # Target Rule: Transparent glassmorphism for Alacritty terminal
-            match.app-id = "^Alacritty$";
+            # FIX: Using 'props' here prevents the unexpected node 'app-id' error
+            match = _: {
+              props = {
+                app-id = "^Alacritty$";
+              };
+            };
             opacity = 0.85;
             background-effect = {
               blur = true;
-              xray = true; # Highly efficient wallpaper blur caching
+              xray = true;
             };
           }
         ];
