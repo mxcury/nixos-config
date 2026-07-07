@@ -37,6 +37,8 @@
       pulse.enable = true;
     };
 
+    programs.zsh.enable = true;
+
     users.users."dev" = {
       isNormalUser = true;
       description = "dev";
