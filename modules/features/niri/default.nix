@@ -19,58 +19,45 @@
         input.keyboard.xkb.layout = "us,ua";
         hotkey-overlay.skip-at-startup = true;
 
-        # 1. Global Blur Settings (Controls background blur intensity)
+        # 1. Global Blur Settings (Standard single-value nodes, serializes perfectly)
         blur = {
-          passes = 3;       # Blur quality smoothness
-          offset = 3.0;     # Blur radius spread per pass
-          noise = 0.02;     # Dithering noise to prevent color banding
-          saturation = 1.2; # Boost colors shining through the glass
+          passes = 3;
+          offset = 3.0;
+          noise = 0.02;
+          saturation = 1.2;
         };
 
-        # 2. Layout, Gaps, and Wallpaper-Themed Gradient Focus Rings
+        # 2. Clean Layout, Gaps, and Solid Aesthetic Focus Rings
+        # Removed the 'border' block entirely so it safely defaults to off.
         layout = {
-          gaps = 12; # Clean outer & inner spacing to let shadows breath
+          gaps = 12; 
           
           focus-ring = {
             width = 2;
-            # A gorgeous, vibrant pastel gradient (Lavender to Blue)
-            active-gradient = {
-              from = "#cba6f7";
-              to = "#89b4fa";
-              angle = 45;
-            };
+            active-color = "#cba6f7";   # Gorgeous solid pastel lavender
             inactive-color = "#1e1e2e"; # Deep dark slate for unfocused windows
           };
-          
-          border.enable = false; # Drop borders entirely; focus rings look cleaner
         };
 
         # 3. Clean, Fast Easing Animations
         animations = {
           window-open = {
-            duration-ms = 200;       # Snappy 0.2 second pop in
-            curve = "ease-out-expo"; # Blazing fast start, gentle deceleration
+            duration-ms = 200;
+            curve = "ease-out-expo";
           };
           
           window-close = {
-            duration-ms = 150;       # Lightning-fast 0.15 second close
-            curve = "ease-out-quad"; # Predictable, smooth exit velocity
+            duration-ms = 150;
+            curve = "ease-out-quad";
           };
         };
 
-        # 4. Window Rules (Combining Global Rules + Terminal Blur)
+        # 4. Window Rules (Global Rounding + Terminal Blur)
         window-rule = [
           {
-            # Global Rule: Applied to ALL windows
+            # Global corner rounding & window content clipping
             geometry-corner-radius = 12;
             clip-to-geometry = true;
-            shadow = {
-              enable = true;
-              softness = 30;
-              spread = 2;
-              offset = { x = 0; y = 6; };
-              color = "#00000050"; # Elegant semi-transparent drop shadow
-            };
           }
           {
             # Target Rule: Transparent glassmorphism for Alacritty terminal
@@ -78,7 +65,7 @@
             opacity = 0.85;
             background-effect = {
               blur = true;
-              xray = true; # Blurs wallpaper directly for major performance gains
+              xray = true; # Highly efficient wallpaper blur caching
             };
           }
         ];
