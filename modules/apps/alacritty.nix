@@ -3,6 +3,8 @@
     programs.alacritty = {
       enable = true;
       settings = {
+	general.import = [ "~/.config/alacritty/themes/noctalia.toml" ];
+
         window = {
           decorations = "None";
           padding = { x = 12; y = 12; };
