@@ -14,6 +14,9 @@
 
         imports = [
           self.homeModules.brave
+          self.homeModules.alacritty
+          self.homeModules.zsh
+          self.homeModules.lazygit
         ];
 
         home.packages = with pkgs; [
