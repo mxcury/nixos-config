@@ -7,6 +7,8 @@
 
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    inputs.millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
   };
   outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
 }
