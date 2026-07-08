@@ -1,5 +1,12 @@
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, inputs, ... }:
 
+let
+  noctalia-plugin = pkgs.vimUtils.buildVimPlugin {
+    name = "noctalia-nvim";
+    src = inputs.noctalia-nvim;
+  };
+in
+{
   imports = [
     inputs.nvf.homeManagerModules.default
   ];
@@ -14,15 +21,12 @@
 
         extraPlugins = {
           noctalia = {
-            package = pkgs'.vimUtils.buildVimPlugin {
-              name = "noctalia-nvim";
-              src = inputs.noctalia-nvim;
-            };
+            package = noctalia-plugin;
             
             setup = ''
               require('noctalia').setup({ 
                 palette_path = vim.fn.expand("~/.config/noctalia/colors.json"),
-                auto_reload = true, -- Watches for wallpaper changes and hot-reloads Neovim live!
+                auto_reload = true, 
                 transparent = false,
               })
               vim.cmd.colorscheme("noctalia")
@@ -37,7 +41,7 @@
 
         statusline.lualine = {
           enable = true;
-          theme = "auto"; # "auto" lets lualine read the colorscheme dynamic values directly
+          theme = "auto";
         };
 
         telescope.enable = true;
