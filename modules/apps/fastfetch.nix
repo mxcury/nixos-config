@@ -10,25 +10,28 @@
           padding.top = 1;
         };
 
-        display.separator = " ";
+        display = {
+          separator = " {#keys}│ ";
+          key.width = 12;
+        };
 
         modules = [
-          { key = "╭───────────╮"; type = "custom"; }
-          { key = "│ {#31} user {#keys}│"; type = "title"; format = "{user-name}"; }
-          { key = "│ {#32}󰇅 hname {#keys}│"; type = "title"; format = "{host-name}"; }
-          { key = "│ {#33}󰅐 uptime {#keys}│"; type = "uptime"; }
-          { key = "│ {#34}{icon} distro {#keys}│"; type = "os"; }
-          { key = "│ {#35} kernel {#keys}│"; type = "kernel"; }
-          { key = "│ {#36}󰇄 desktop {#keys}│"; type = "de"; }
-          { key = "│ {#31} term {#keys}│"; type = "terminal"; }
-          { key = "│ {#32} shell {#keys}│"; type = "shell"; }
-          { key = "│ {#33}󰍛 cpu {#keys}│"; type = "cpu"; showPeCoreCount = true; }
-          { key = "│ {#34}󰉉 disk {#keys}│"; type = "disk"; folders = "/"; }
-          { key = "│ {#35} memory {#keys}│"; type = "memory"; }
-          { key = "│ {#36}󰩟 network {#keys}│"; type = "localip"; format = "{ipv4} ({ifname})"; }
-          { key = "├───────────┤"; type = "custom"; }
-          { key = "│ {#39} colors {#keys}│"; type = "colors"; symbol = "circle"; }
-          { key = "╰───────────╯"; type = "custom"; }
+          { key = "╭─────────────╮"; type = "custom"; }
+          { key = "│ {#31} user"; type = "title"; format = "{user-name}"; }
+          { key = "│ {#32}󰇅 hname"; type = "title"; format = "{host-name}"; }
+          { key = "│ {#33}󰅐 uptime"; type = "uptime"; }
+          { key = "│ {#34}{icon} distro"; type = "os"; }
+          { key = "│ {#35} kernel"; type = "kernel"; }
+          { key = "│ {#36}󰇄 desktop"; type = "de"; }
+          { key = "│ {#31} term"; type = "terminal"; }
+          { key = "│ {#32} shell"; type = "shell"; }
+          { key = "│ {#33}󰍛 cpu"; type = "cpu"; showPeCoreCount = true; }
+          { key = "│ {#34}󰉉 disk"; type = "disk"; folders = "/"; }
+          { key = "│ {#35} memory"; type = "memory"; }
+          { key = "│ {#36}󰩟 network"; type = "localip"; format = "{ipv4} ({ifname})"; }
+          { key = "├─────────────┤"; type = "custom"; }
+          { key = "│ {#39} colors"; type = "colors"; symbol = "circle"; }
+          { key = "╰─────────────╯"; type = "custom"; }
         ];
       };
     };
