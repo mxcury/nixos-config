@@ -8,6 +8,7 @@
       
       shellAliases = {
         lg = "lazygit";
+        sys-upgrade = "cd $FLAKE && nix flake update && nh os switch --ask";
       };
     };
 

@@ -21,15 +21,15 @@
           self.homeModules.alacritty
           self.homeModules.zsh
           self.homeModules.lazygit
-          #self.homeModules.btop
-          #self.homeModules.htop
-          #self.homeModules.fzf
-          #self.homeModules.eza
-          #self.homeModules.bat
-          #self.homeModules.lf
-          #self.homeModules.fastfetch
-          #self.homeModules.spotify-player
-          #self.homeModules.ripgrep
+          self.homeModules.btop
+          self.homeModules.htop
+          self.homeModules.fzf
+          self.homeModules.eza
+          self.homeModules.bat
+#          self.homeModules.lf
+          self.homeModules.fastfetch
+          self.homeModules.spotify-player
+          self.homeModules.ripgrep
         ];
 
         home.packages = with pkgs; [
