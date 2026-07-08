@@ -26,7 +26,7 @@
           self.homeModules.fzf
           self.homeModules.eza
           self.homeModules.bat
-#          self.homeModules.lf
+          self.homeModules.yazi
           self.homeModules.fastfetch
           self.homeModules.spotify-player
           self.homeModules.ripgrep
