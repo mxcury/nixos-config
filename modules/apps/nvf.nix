@@ -1,8 +1,8 @@
 { inputs, ... }: {
-  flake.homeModules.nvf = { pkgs, ... }: {
+  flake.homeModules.nvf = { pkgs, config,  ... }: {
     imports = [
       inputs.nvf.homeManagerModules.default
-      inputs.matugen.homeManagerModules.default
+      inputs.matugen.nixosModules.default
     ];
 
     programs.matugen = {
@@ -58,7 +58,7 @@
           base16-nvim = { package = base16-nvim; };
         };
 
-        extraConfigLuaPre = ''
+        luaConfigRC.matugen = ''
           local status, matugen = pcall(require, "matugen")
           if status then
             matugen.setup()
@@ -74,8 +74,8 @@
 
         visuals = {
           enable = true;
-          nvimWebDevicons = true;
-          lspKind = true;
+          nvim-web-devicons.enable = true;
+          cursorline = true;
         };
 
         # --- IDE Features ---
@@ -92,7 +92,7 @@
           enable = true;
           formatOnSave = true;
           lightbulb.enable = true;
-          languages = {
+          lsplines = {
             nix.enable = true;
             ts.enable = true;
             html.enable = true;
