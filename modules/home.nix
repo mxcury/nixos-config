@@ -13,12 +13,15 @@
       useUserPackages = true;
       backupFileExtension = "bak";
 
+      extraSpecialArgs = { inherit inputs self; };
+
       users.dev = { pkgs, ... }: {
         home.stateVersion = config.system.stateVersion;
 
         imports = [
           self.homeModules.brave
           self.homeModules.alacritty
+	  self.homeModules.nvf;
           self.homeModules.zsh
           self.homeModules.lazygit
           self.homeModules.btop
