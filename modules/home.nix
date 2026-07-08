@@ -19,6 +19,7 @@
         imports = [
           self.homeModules.brave
           self.homeModules.alacritty
+          self.homeModules.nvf
           self.homeModules.zsh
           self.homeModules.lazygit
           self.homeModules.btop
