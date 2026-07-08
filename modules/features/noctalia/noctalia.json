@@ -291,7 +291,7 @@
       "useOriginalImages": false,
       "overviewBlur": 0.4,
       "overviewTint": 0.6,
-      "useWallhaven": true,
+      "useWallhaven": false,
       "wallhavenQuery": "pixel",
       "wallhavenSorting": "relevance",
       "wallhavenOrder": "desc",
@@ -548,7 +548,7 @@
         "lowSoundFile": "",
         "excludedApps": "discord,firefox,chrome,chromium,edge"
       },
-      "enableMediaToast": true,
+      "enableMediaToast": false,
       "enableKeyboardLayoutToast": true,
       "enableBatteryToast": true
     },
@@ -694,10 +694,10 @@
     "doNotDisturb": false,
     "noctaliaPerformanceMode": false,
     "barVisible": true,
-    "openedPanel": "",
+    "openedPanel": "notificationHistoryPanel-Virtual-1",
     "lockScreenActive": false,
     "wallpapers": {
-      "Virtual-1": "/home/dev/Pictures/Wallpapers/wallhaven_l3kk8q.jpg"
+      "Virtual-1": "/home/dev/Pictures/Wallpapers/wallhaven_vg52ql.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -718,7 +718,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1783287392000
+      "lastSeenTs": 1783507478000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"
