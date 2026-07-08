@@ -49,18 +49,25 @@
   "Mod+Shift+5".move-column-to-workspace = 5;
   "Mod+Shift+6".move-column-to-workspace = 6;
   
-    ### Column sizing ###
-    "Mod+R".switch-preset-column-width = { };
-    "Mod+F".maximize-column = { };
-    "Mod+Shift+F".fullscreen-window = { };
-    "Mod+C".center-column = { };
+  ### Window / Column sizing ###
+  "Mod+Shift+Left".decrease-column-width = { };
+  "Mod+Shift+H".decrease-column-width = { };
+  "Mod+Shift+Right".increase-column-width = { };
+  "Mod+Shift+L".increase-column-width = { };
+  "Mod+Shift+Up".increase-window-height = { };
+  "Mod+Shift+K".increase-window-height = { };
+  "Mod+Shift+Down".decrease-window-height = { };
+  "Mod+Shift+J".decrease-window-height = { };
+  "Mod+F".maximize-column = { };
+  "Mod+Shift+F".fullscreen-window = { };
+  "Mod+C".center-column = { };
     
-    ### Screenshots ###
-    "Print".screenshot = { };
-    "Ctrl+Print".screenshot-screen = { };
-    "Alt+Print".screenshot-window = { };
+  ### Screenshots ###
+  "Print".screenshot = { };
+  "Ctrl+Print".screenshot-screen = { };
+  "Alt+Print".screenshot-window = { };
     
-    ### Session / system ###
-    #"Mod+Shift+E".quit = { };
-    #"Mod+Escape".toggle-keyboard-shortcuts-inhibit = { allow-inhibiting = false; };
+  ### Session / system ###
+  #"Mod+Shift+E".quit = { };
+  #"Mod+Escape".toggle-keyboard-shortcuts-inhibit = { allow-inhibiting = false; };
 }
