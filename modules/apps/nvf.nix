@@ -73,9 +73,8 @@
         filetree.neo-tree.enable = true;
 
         visuals = {
-          enable = true;
           nvim-web-devicons.enable = true;
-          cursorline = true;
+          nvim-cursorline.enable = true;
         };
 
         # --- IDE Features ---
@@ -92,12 +91,13 @@
           enable = true;
           formatOnSave = true;
           lightbulb.enable = true;
-          lsplines = {
-            nix.enable = true;
-            ts.enable = true;
-            html.enable = true;
-            css.enable = true;
-          };
+        };
+
+        languages = {
+          nix.enable = true;
+          typescript.enable = true;
+          html.enable = true;
+          css.enable = true;
         };
 
         git = {
