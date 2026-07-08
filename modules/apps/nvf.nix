@@ -14,7 +14,10 @@
 
         extraPlugins = {
           noctalia = {
-            package = inputs.noctalia-nvim;
+            package = inputs.vimUtils.buildVimPlugin {
+              name = "noctalia-nvim";
+              src = inputs.noctalia-nvim;
+            };
             
             setup = ''
               require('noctalia').setup({ 
