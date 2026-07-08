@@ -29,7 +29,7 @@
     home.packages = with pkgs; [
       ueberzugpp
       ffmpegthumbnailer
-      poppler_utils
+      poppler-utils
       unar
       jq
     ];
