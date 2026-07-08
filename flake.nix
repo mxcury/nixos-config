@@ -7,10 +7,6 @@
 
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    nvf.url = "github:notashelf/nvf";
-    noctalia-nvim.url = "github:keremimo/noctalia.nvim";
-    noctalia-nvim.flake = false;
   };
   outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
 }
