@@ -50,14 +50,7 @@
   "Mod+Shift+6".move-column-to-workspace = 6;
   
   ### Window / Column sizing ###
-  "Mod+Shift+Left".set-column-width = "-20%";
-  "Mod+Shift+H".set-column-width = "-20%";
-  "Mod+Shift+Right".set-column-width = "+20%";
-  "Mod+Shift+L".set-column-width = "+20%";
-  "Mod+Shift+Up".set-window-height = "-50%";
-  "Mod+Shift+K".set-window-height = "-50%";
-  "Mod+Shift+Down".set-window-height = "+50%";
-  "Mod+Shift+J".set-window-height = "+50%";
+  "Mod+R".switch-preset-column-width = { };
   "Mod+F".maximize-column = { };
   "Mod+Shift+F".fullscreen-window = { };
   "Mod+C".center-column = { };
