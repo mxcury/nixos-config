@@ -3,10 +3,13 @@
     imports = [
       self.nixosModules.greetd
       self.nixosModules.homeManagerSetup
-      self.nixosModules.steam
+      #      self.nixosModules.steam
     ];
 
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    nix.settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
     boot.kernelParams = [
@@ -27,7 +30,7 @@
 
     networking.networkmanager.enable = true;
 
-    services.printing.enable = true; 
+    services.printing.enable = true;
 
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
@@ -43,7 +46,10 @@
     users.users."dev" = {
       isNormalUser = true;
       description = "dev";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
       shell = pkgs.zsh;
 
       packages = with pkgs; [ ];

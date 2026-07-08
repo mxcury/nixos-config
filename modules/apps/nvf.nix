@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  flake.homeModules.nvf = { pkgs, config,  ... }: {
+  flake.homeModules.nvf = { pkgs, config, ... }: {
     imports = [
       inputs.nvf.homeManagerModules.default
       inputs.matugen.nixosModules.default
@@ -46,19 +46,26 @@
       return M
     '';
 
+    xdg.configFile."nvim/lua/matugen.lua".source =
+      "${config.programs.matugen.theme.files}/.config/nvim/lua/matugen.lua";
+
     programs.nvf = {
       enable = true;
       settings.vim = {
-        viAlias = true; 
+        viAlias = true;
         vimAlias = true;
 
         theme.enable = false;
 
         extraPlugins = with pkgs.vimPlugins; {
-          base16-nvim = { package = base16-nvim; };
+          base16-nvim = {
+            package = base16-nvim;
+          };
         };
 
         luaConfigRC.matugen = ''
+          vim.opt.runtimepath:append(vim.fn.expand("~/.config/nvim"))
+
           local status, matugen = pcall(require, "matugen")
           if status then
             matugen.setup()
