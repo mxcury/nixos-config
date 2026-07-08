@@ -11,7 +11,7 @@
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
-      backupFileExtension = "bak";
+      backupCommand = "mv -v \"$@\" \"$@.bak-$(date +%Y%m%d%H%M%S)\"";
 
       users.dev = { pkgs, ... }: {
         home.stateVersion = config.system.stateVersion;
