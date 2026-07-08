@@ -14,7 +14,7 @@
 
         extraPlugins = {
           noctalia = {
-            package = pkgs.vimUtils.buildVimPlugin {
+            package = pkgs'.vimUtils.buildVimPlugin {
               name = "noctalia-nvim";
               src = inputs.noctalia-nvim;
             };
