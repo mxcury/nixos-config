@@ -47,7 +47,7 @@
             "characterCount": 2,
             "colorizeIcons": false,
             "emptyColor": "none",
-            "enableScrollWheel": false,
+            "enableScrollWheel": true,
             "focusedColor": "tertiary",
             "followFocusedScreen": false,
             "fontWeight": "bold",
@@ -76,20 +76,6 @@
             "pinned": []
           },
           {
-            "hideWhenZero": false,
-            "hideWhenZeroUnread": false,
-            "iconColor": "none",
-            "id": "NotificationHistory",
-            "showUnreadBadge": true,
-            "unreadBadgeColor": "primary"
-          },
-          {
-            "displayMode": "onhover",
-            "iconColor": "none",
-            "id": "Bluetooth",
-            "textColor": "none"
-          },
-          {
             "displayMode": "onhover",
             "iconColor": "none",
             "id": "Volume",
@@ -101,12 +87,6 @@
             "displayMode": "onhover",
             "iconColor": "none",
             "id": "Brightness",
-            "textColor": "none"
-          },
-          {
-            "displayMode": "onhover",
-            "iconColor": "none",
-            "id": "Network",
             "textColor": "none"
           },
           {
@@ -341,10 +321,13 @@
             "id": "AirplaneMode"
           },
           {
-            "id": "Notifications"
+            "id": "PowerProfile"
           },
           {
-            "id": "PowerProfile"
+            "id": "Bluetooth"
+          },
+          {
+            "id": "Network"
           }
         ],
         "right": [
@@ -356,6 +339,9 @@
           },
           {
             "id": "KeepAwake"
+          },
+          {
+            "id": "Notifications"
           }
         ]
       },
@@ -718,7 +704,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1783507478000
+      "lastSeenTs": 0
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"

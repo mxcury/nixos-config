@@ -6,16 +6,13 @@
       lib,
       ...
     }:
-    let
-      noctaliaDir = "${self}/modules/features/noctalia";
-    in
     {
       imports = [
         inputs.nvf.homeManagerModules.default
       ];
 
-      xdg.configFile."nvim/lua/matugen-template.lua".source = "${noctaliaDir}/matugen-template.lua";
-      xdg.configFile."noctalia/user-templates.toml".source = "${noctaliaDir}/user-templates.toml";
+      xdg.configFile."nvim/lua/matugen-template.lua".source = "${self}/matugen-template.lua";
+      xdg.configFile."noctalia/user-templates.toml".source = "${self}/user-templates.toml";
 
       programs.nvf = {
         enable = true;
