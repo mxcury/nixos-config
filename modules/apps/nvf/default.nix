@@ -20,6 +20,8 @@
           viAlias = true;
           vimAlias = true;
 
+          extraPackages = [ pkgs.git ];
+
           options = {
             tabstop = 2;
             shiftwidth = 2;

@@ -27,6 +27,7 @@
             self.homeModules.niriCursor
             self.homeModules.brave
             self.homeModules.alacritty
+            self.homeModules.git
             self.homeModules.nvf
             self.homeModules.zsh
             self.homeModules.lazygit
