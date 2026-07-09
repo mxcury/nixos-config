@@ -1,15 +1,12 @@
 { self, inputs, ... }: {
   flake.homeModules.zsh = { pkgs, ... }: {
-  programs.zsh = {
+    programs.zsh = {
       enable = true;
       enableCompletion = true;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
-      
-      shellAliases = {
-        lg = "lazygit";
-        sys-upgrade = "cd $FLAKE && nix flake update && nh os switch --ask";
-      };
+
+      shellAliases = import ./aliases.nix;
     };
 
     programs.starship = {
@@ -75,7 +72,10 @@
           empty_symbol = "󰂎 ";
           format = "[$symbol$percentage]($style) ";
           display = [
-            { threshold = 100; style = "bold green"; }
+            {
+              threshold = 100;
+              style = "bold green";
+            }
           ];
         };
       };
