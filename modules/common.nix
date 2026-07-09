@@ -71,7 +71,6 @@
     };
 
     environment.systemPackages = with pkgs; [
-      git
       nix-output-monitor
     ];
 
