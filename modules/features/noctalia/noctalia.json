@@ -622,7 +622,7 @@
           "id": "cava"
         }
       ],
-      "enableUserTheming": false
+      "enableUserTheming": true
     },
     "nightLight": {
       "enabled": true,
@@ -683,7 +683,7 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "Virtual-1": "/home/dev/Pictures/Wallpapers/wallhaven_4gg1k3.jpg"
+      "Virtual-1": "/home/dev/Pictures/Wallpapers/wallhaven_l3kk8q.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
