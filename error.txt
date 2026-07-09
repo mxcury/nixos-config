@@ -1,2 +1,89 @@
-30425 /etc/profiles/per-user/dev/bin/nvim --cmd lua vim.opt.packpath:prepend('/nix/store/ab114hqhni244c8qncxxhfcq7xy25m9c-mnw-configDir');vim.opt.runtimepath:prepend('/nix/store/ab114hqhni244c8qncxxhfcq7xy25m9c-mnw-configDir');vim.g.loaded_node_provider=0;vim.g.loaded_perl_provider=0;vim.g.loaded_python_provider=0;vim.g.loaded_python3_provider=0;vim.g.loaded_ruby_provider=0 modules/apps/nvf/default.nix
-30426 /etc/profiles/per-user/dev/bin/nvim --embed --cmd lua vim.opt.packpath:prepend('/nix/store/ab114hqhni244c8qncxxhfcq7xy25m9c-mnw-configDir');vim.opt.runtimepath:prepend('/nix/store/ab114hqhni244c8qncxxhfcq7xy25m9c-mnw-configDir');vim.g.loaded_node_provider=0;vim.g.loaded_perl_provider=0;vim.g.loaded_python_provider=0;vim.g.loaded_python3_provider=0;vim.g.loaded_ruby_provider=0 modules/apps/nvf/default.nix
+nixos  main
+❯ pkill -SIGUSR1 nvim                                                                        23:30
+
+nixos  main
+❯ pgrep -a nvim                                                                              23:36
+33564 /etc/profiles/per-user/dev/bin/nvim --cmd lua vim.opt.packpath:prepend('/nix/store/ab114hqhni244c8qncxxhfcq7xy25m9c-mnw-configDir');vim.opt.runtimepath:prepend('/nix/store/ab114hqhni244c8qncxxhfcq7xy25m9c-mnw-configDir');vim.g.loaded_node_provider=0;vim.g.loaded_perl_provider=0;vim.g.loaded_python_provider=0;vim.g.loaded_python3_provider=0;vim.g.loaded_ruby_provider=0 modules/apps/nvf/default.nix
+33565 /etc/profiles/per-user/dev/bin/nvim --embed --cmd lua vim.opt.packpath:prepend('/nix/store/ab114hqhni244c8qncxxhfcq7xy25m9c-mnw-configDir');vim.opt.runtimepath:prepend('/nix/store/ab114hqhni244c8qncxxhfcq7xy25m9c-mnw-configDir');vim.g.loaded_node_provider=0;vim.g.loaded_perl_provider=0;vim.g.loaded_python_provider=0;vim.g.loaded_python3_provider=0;vim.g.loaded_ruby_provider=0 modules/apps/nvf/default.nix
+
+nixos  main
+❯ cat ~/.config/nvim/lua/matugen.lua                                                         23:36
+     File: /home/dev/.config/nvim/lua/matugen.lua
+   1 local M = {}
+   2
+   3 function M.setup()
+   4   require('base16-colorscheme').setup {
+   5     -- Background tones
+   6     base00 = '#121412',
+   7     base01 = '#1e201f',
+   8     base02 = '#292a29',
+   9     base03 = '#8b928d',
+  10     -- Foreground tones
+  11     base04 = '#c1c8c2',
+  12     base05 = '#e3e3e0',
+  13     base06 = '#e3e3e0',
+  14     base07 = '#e3e3e0',
+  15     -- Accent colors
+  16     base08 = '#ffb4ab',
+  17     base09 = '#bcc6e5',
+  18     base0A = '#bccac0',
+  19     base0B = '#abcfbb',
+  20     base0C = '#bcc6e5',
+  21     base0D = '#abcfbb',
+  22     base0E = '#bccac0',
+  23     base0F = '#93000a',
+  24   }
+  25 end
+  26
+  27 -- Register a signal handler for SIGUSR1 (matugen updates)
+  28 local signal = vim.uv.new_signal()
+  29 signal:start(
+  30   'sigusr1',
+  31   vim.schedule_wrap(function()
+  32     package.loaded['matugen'] = nil
+  33     require('matugen').setup()
+  34   end)
+  35 )
+  36
+  37 return M
+
+nixos  main
+❯ cat modules/apps/nvf/matugen-template.lua                                                  23:36
+     File: modules/apps/nvf/matugen-template.lua
+   1 local M = {}
+   2
+   3 function M.setup()
+   4   require('base16-colorscheme').setup {
+   5     -- Background tones
+   6     base00 = '{{colors.surface.default.hex}}',
+   7     base01 = '{{colors.surface_container.default.hex}}',
+   8     base02 = '{{colors.surface_container_high.default.hex}}',
+   9     base03 = '{{colors.outline.default.hex}}',
+  10     -- Foreground tones
+  11     base04 = '{{colors.on_surface_variant.default.hex}}',
+  12     base05 = '{{colors.on_surface.default.hex}}',
+  13     base06 = '{{colors.on_surface.default.hex}}',
+  14     base07 = '{{colors.on_background.default.hex}}',
+  15     -- Accent colors
+  16     base08 = '{{colors.error.default.hex | saturate 20}}',
+  17     base09 = '{{colors.tertiary.default.hex | saturate 20 | set_hue 30}}',
+  18     base0A = '{{colors.secondary.default.hex | saturate 25}}',
+  19     base0B = '{{colors.primary.default.hex | saturate 15}}',
+  20     base0C = '{{colors.tertiary_fixed_dim.default.hex | saturate 25 | set_hue 200}}',
+  21     base0D = '{{colors.primary_fixed_dim.default.hex | saturate 15}}',
+  22     base0E = '{{colors.secondary_fixed_dim.default.hex | saturate 25 | set_hue 280}}',
+  23     base0F = '{{colors.error_container.default.hex | saturate 10}}',
+  24   }
+  25 end
+  26
+  27 -- Register a signal handler for SIGUSR1 (matugen updates)
+  28 _G.__matugen_signal = vim.uv.new_signal()
+  29 _G.__matugen_signal:start(
+  30   'sigusr1',
+  31   vim.schedule_wrap(function()
+  32     package.loaded['matugen'] = nil
+  33     require('matugen').setup()
+  34   end)
+  35 )
+  36
+  37 return M
