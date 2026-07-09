@@ -4,6 +4,7 @@
       enable = true;
       settings = {
         gui.showIcons = true;
+        git.overrideGpg = true;
       };
     };
   };
