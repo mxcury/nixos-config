@@ -6,7 +6,7 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 
-      shellAliases = import ./aliases.nix;
+      shellAliases = import ./_aliases.nix;
     };
 
     programs.starship = {
