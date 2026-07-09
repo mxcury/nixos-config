@@ -2,16 +2,13 @@
   flake.homeModules.git = { pkgs, config, ... }: {
     programs.git = {
       enable = true;
-      userName = "mxcury";
-      userEmail = "mxcury.dev@proton.me";
 
-      # Use SSH for commit signing (git >= 2.34)
-      signing = {
-        key = "~/.ssh/id_ed25519.pub"; # <-- point this at your SSH public key
-        signByDefault = true;
-      };
+      settings = {
+        user = {
+          name = "mxcury";
+          email = "mxcury.dev@proton.me";
+        };
 
-      extraConfig = {
         init.defaultBranch = "main";
 
         pull.rebase = true;
@@ -32,27 +29,25 @@
         color.ui = "auto";
 
         gpg.format = "ssh";
-
         gpg.ssh.allowedSignersFile = "${config.home.homeDirectory}/.ssh/allowed_signers";
 
         credential.helper = "cache --timeout=3600";
       };
 
-      delta = {
-        enable = true;
-        options = {
-          navigate = true;
-          line-numbers = true;
-          side-by-side = false;
-        };
+      signing = {
+        key = "~/.ssh/id_ed25519.pub";
+        signByDefault = true;
       };
+    };
 
-      ignores = [
-        ".DS_Store"
-        "*.swp"
-        ".direnv/"
-        "result"
-      ];
+    programs.delta = {
+      enable = true;
+      enableGitIntegration = true;
+      options = {
+        navigate = true;
+        line-numbers = true;
+        side-by-side = false;
+      };
     };
 
     programs.ssh = {
