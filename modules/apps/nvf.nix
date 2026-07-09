@@ -23,6 +23,13 @@
           viAlias = true;
           vimAlias = true;
 
+          tabstop = 2;
+          shiftwidth = 2;
+
+          options = {
+            expandtab = true;
+          };
+
           theme.enable = false;
 
           extraPlugins = with pkgs.vimPlugins; {
@@ -33,9 +40,19 @@
 
           additionalRuntimePaths = [ "${config.home.homeDirectory}/.config/nvim" ];
 
-          extraConfigLua = ''
-            pcall(function() require('matugen').setup() end)
-          '';
+          luaConfigRC = {
+            matugen = ''
+              pcall(function() require('matugen').setup() end)
+            '';
+
+            treesitter-autostart = ''
+              vim.api.nvim_create_autocmd('FileType', {
+                callback = function()
+                  pcall(vim.treesitter.start)
+                end,
+              })
+            '';
+          };
 
           # --- The VS Code Layout & Visuals ---
           statusline.lualine.enable = true;
@@ -52,6 +69,12 @@
           treesitter = {
             enable = true;
             autotagHtml = true;
+            grammars = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+              nix
+              lua
+              toml
+              json
+            ];
           };
 
           autocomplete.nvim-cmp.enable = true;

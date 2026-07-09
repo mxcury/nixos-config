@@ -13,14 +13,14 @@ function M.setup()
     base06 = '{{colors.on_surface.default.hex}}',
     base07 = '{{colors.on_background.default.hex}}',
     -- Accent colors
-    base08 = '{{colors.error.default.hex}}',
-    base09 = '{{colors.tertiary.default.hex}}',
-    base0A = '{{colors.secondary.default.hex}}',
-    base0B = '{{colors.primary.default.hex}}',
-    base0C = '{{colors.tertiary_fixed_dim.default.hex}}',
-    base0D = '{{colors.primary_fixed_dim.default.hex}}',
-    base0E = '{{colors.secondary_fixed_dim.default.hex}}',
-    base0F = '{{colors.error_container.default.hex}}',
+    base08 = '{{colors.error.default.hex | saturate 20}}',
+    base09 = '{{colors.tertiary.default.hex | saturate 20 | set_hue 30}}',
+    base0A = '{{colors.secondary.default.hex | saturate 25}}',
+    base0B = '{{colors.primary.default.hex | saturate 15}}',
+    base0C = '{{colors.tertiary_fixed_dim.default.hex | saturate 25 | set_hue 200}}',
+    base0D = '{{colors.primary_fixed_dim.default.hex | saturate 15}}',
+    base0E = '{{colors.secondary_fixed_dim.default.hex | saturate 25 | set_hue 280}}',
+    base0F = '{{colors.error_container.default.hex | saturate 10}}',
   }
 end
 
