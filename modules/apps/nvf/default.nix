@@ -11,8 +11,8 @@
         inputs.nvf.homeManagerModules.default
       ];
 
-      xdg.configFile."nvim/lua/matugen-template.lua".source = "./matugen-template.lua";
-      xdg.configFile."noctalia/user-templates.toml".source = "./user-templates.toml";
+      xdg.configFile."nvim/lua/matugen-template.lua".source = ./matugen-template.lua;
+      xdg.configFile."noctalia/user-templates.toml".source = ./user-templates.toml;
 
       programs.nvf = {
         enable = true;
