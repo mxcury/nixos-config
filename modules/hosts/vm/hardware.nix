@@ -28,7 +28,6 @@
       fileSystems."/" = {
         device = "/dev/disk/by-uuid/ef7282aa-55a9-4289-b570-7627f09da865";
         fsType = "btrfs";
-        autoResize = true;
       };
 
       fileSystems."/home" = {
