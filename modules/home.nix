@@ -35,6 +35,7 @@
           imports = [
             self.homeModules.brave
             self.homeModules.alacritty
+            self.homeModules.vscodium
             self.homeModules.git
             self.homeModules.nvf
             self.homeModules.zsh
