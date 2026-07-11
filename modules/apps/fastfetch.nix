@@ -8,14 +8,6 @@
         logo = {
           source = "${./logo.txt}";
           type = "file";
-          color = {
-            "1" = "#0e3eb5";
-            "2" = "#0e91b5";
-            "3" = "#0e3eb5";
-            "4" = "#0e91b5";
-            "5" = "#0e3eb5";
-            "6" = "#0e91b5";
-          };
         };
 
         display.separator = " ";
