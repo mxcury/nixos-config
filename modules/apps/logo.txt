@@ -1,29 +1,13 @@
-               .:;;;        ........       ....                
-              .;xxxx;.       .;;;;;:.     :;;;;..              
-              .+xxxxx;.       :;;;;;;   .:;;;;;:.              
-               .;xxxxx+.       .;;;;;;..:;;;;;:.               
-                .;xxxxx+.       .;;;;;;;;;;;;:                 
-          ........;xxxxxx.........;;;;;;;;;;:                  
-         :+xxxxxxxxxxxxxxxxxxxxxx;::;;;;;;;.        ;:         
-        .+xxxxxxxxxxxxxxxxxxxxxxxx+::;;;;;:        +x+:        
-       .xxxxxxxxxxxxxxxxxxxxxxxxxxxx.;;;;;;:      xxxxx.       
-                  .:::::.             :;;;;;:   .+xxxxx;       
-                .:;;;;;:               :;;;;;: :+xxxxx;.       
-               .:;;;;;:.                .;;;;::+xxxxx;.        
-              .:;;;;;:                   .;;:.xxxxxx;          
-  .;;;;;;;;;;;;;;;;;.                     .:;xxxxxxxxxxxxxxx;. 
- :;;;;;;;;;;;;;;;;;:                       ;xxxxxxxxxxxxxxxxx;.
-  .;;;;;;;;;;;;;;;.;;                     ;xxxxxxxxxxxxxxxxx;. 
-          .:;;;;:.+xx;.                 .;xxxxx+.              
-         .;;;;;:.;xxxx;.               .;xxxxx+.               
-        .;;;;;:..+xxxxx;.              ;xxxxx+.                
-       :;;;;;:.  .+xxxxx+             ;;;;;;;                  
-       .;;;;;      +xxxxxx.;;;;;;;;;;;;;;;;;;;;;;;;;;;;.       
-        .:;:        ;xxxxx+::;;;;;;;;;;;;;;;;;;;;;;;;:.        
-         ..        ;xxxxxxx+::;;;;;;;;;;;;;;;;;;;;;;:.         
-                  ;xxxxxxxxxx:.  .. ..;;;;;;:      .           
-                .;xxxxxxxxxxxx:        :;;;;;:                 
-               .;xxxxx+..xxxxxx;       .:;;;;;:.               
-              .;xxxxx;.  .xxxxxx+       .:;;;;;:.              
-              .;xxxx;.    .+xxxxx;        :;;;;..              
-               .:;;;       .;;;;;;.        ....                
+       ++:   :;;.  .;:       
+       ;xx:   :;;..;;:       
+    .::.;xx;::::;;;;:        
+    xxxxxxxxxxxx;;;:   ;x    
+        :;;      .;;: ;xx;   
+       ;;;         ;.+xx:    
+ ;;;;;;;:.         .+xxxxxxx.
+  ...;;;;x         xxx.::::. 
+   .;;: +xx.     .xx+.       
+    ;:  .;xx;;;;;;;;;;;;;    
+        ;xxxx;...:;;:...     
+       ;xx::xx;   .;;:       
+       ++:  ;xx+   .;:       
