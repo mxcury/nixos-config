@@ -6,13 +6,17 @@
         "$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
 
         logo = {
-          type = "small";
-          padding.top = 1;
-          color = {
-            "1" = "38;5;39";
-            "2" = "38;5;68";
+            source = "${./logo.txt}";
+            type = "file";
+            color = {
+              "1" = "#F3A2BB";
+              "2" = "#EEAE7B";
+              "3" = "#B5C77D";
+              "4" = "#6DD3C0";
+              "5" = "#80C6F8";
+              "6" = "#C7AFF5";
+            };
           };
-        };
 
         display.separator = " ";
 
