@@ -3,7 +3,7 @@
     programs.alacritty = {
       enable = true;
       settings = {
-	general.import = [ "~/.config/alacritty/themes/noctalia.toml" ];
+	  general.import = [ "~/.config/alacritty/themes/noctalia.toml" ];
 
         window = {
           decorations = "None";
