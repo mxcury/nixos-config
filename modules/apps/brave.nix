@@ -6,7 +6,7 @@
       commandLineArgs = [
         "--force-dark-mode"
         "--enable-features=WebUIDarkMode,UseOzonePlatform"
-	"--ozone-platform-hint=auto"
+	    "--ozone-platform-hint=auto"
       ];
 
       extensions = [
