@@ -3,7 +3,7 @@
     programs.eza = {
       enable = true;
       enableZshIntegration = true;
-      git = false;
+      git = true;
       icons = "auto";
       extraOptions = [
         "--group-directories-first"

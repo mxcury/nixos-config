@@ -21,10 +21,18 @@
         backupCommand = "mv -v \"$@\" \"$@.bak-$(date +%Y%m%d%H%M%S)\"";
 
         users.dev = { pkgs, ... }: {
-          home.stateVersion = config.system.stateVersion;
+          home = {
+            stateVersion = config.system.stateVersion;
+            pointerCursor = {
+              enable = true;
+              gtk.enable = true;
+              package = pkgs.bibata-cursors;
+              name = "Bibata-Modern-Ice";
+              size = 24;
+            };
+          };
 
           imports = [
-            self.homeModules.niriCursor
             self.homeModules.brave
             self.homeModules.alacritty
             self.homeModules.git
@@ -32,7 +40,6 @@
             self.homeModules.zsh
             self.homeModules.lazygit
             self.homeModules.btop
-            self.homeModules.htop
             self.homeModules.fzf
             self.homeModules.eza
             self.homeModules.bat

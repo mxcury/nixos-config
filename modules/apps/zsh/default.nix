@@ -7,6 +7,7 @@
       syntaxHighlighting.enable = true;
 
       shellAliases = import ./_aliases.nix;
+      initExtra = import ./_functions.nix;
     };
 
     programs.starship = {
