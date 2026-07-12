@@ -29,6 +29,9 @@
           };
 
           theme.enable = false;
+          binds.whichKey.enable = true;
+          globals.mapleader = " ";
+          comments.comment-nvim.enable = true;
 
           extraPlugins = with pkgs.vimPlugins; {
             base16-nvim = {
