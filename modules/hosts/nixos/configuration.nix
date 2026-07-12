@@ -5,7 +5,7 @@
       self.nixosModules.nixosHardware
       self.nixosModules.common
     ];
-  
+
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
@@ -21,6 +21,7 @@
       variant = "";
     };
     console.keyMap = "uk";
+    services.upower.enable = true;
 
     time.timeZone = "Europe/London";
 
