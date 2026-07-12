@@ -66,15 +66,16 @@ in
   "Alt+Print".screenshot-window = { };
 
   ## Shortcuts ###
-  "XF86AudioRaiseVolume".spawn-sh = "${noctalia} msg volume-up";
-  "XF86AudioLowerVolume".spawn-sh = "${noctalia} msg volume-down";
-  "XF86AudioMute".spawn-sh = "${noctalia} msg volume-mute";
+  "XF86AudioRaiseVolume".spawn-sh = "${noctalia} ipc call volume increase";
+  "XF86AudioLowerVolume".spawn-sh = "${noctalia} ipc call volume decrease";
+  "XF86AudioMute".spawn-sh = "${noctalia} ipc call volume muteOutput";
+  "XF86AudioMicMute".spawn-sh = "${noctalia} ipc call volume muteInput";
 
-  "XF86MonBrightnessUp".spawn-sh = "${noctalia} msg brightness-up";
-  "XF86MonBrightnessDown".spawn-sh = "${noctalia} msg brightness-down";
+  "XF86MonBrightnessUp".spawn-sh = "${noctalia} ipc call brightness increase";
+  "XF86MonBrightnessDown".spawn-sh = "${noctalia} ipc call brightness decrease";
 
-  "XF86Bluetooth".spawn-sh = "${noctalia} msg bluetooth-toggle";
-  "XF86WLAN".spawn-sh = "${noctalia} msg wifi-toggle && ${noctalia} msg bluetooth-toggle";
+  "XF86Bluetooth".spawn-sh = "${noctalia} ipc call bluetooth toggle";
+  "XF86WLAN".spawn-sh = "${noctalia} ipc call airplaneMode toggle";
 
   ### Session / system ###
   #"Mod+Shift+E".quit = { };
