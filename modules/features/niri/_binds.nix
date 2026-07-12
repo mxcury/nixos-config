@@ -3,12 +3,15 @@
   pkgs,
   self',
 }:
+let
+  noctalia = lib.getExe self'.packages.noctalia-wrapped;
+in
 {
   ### Apps ###
   "Mod+Return".spawn-sh = lib.getExe pkgs.alacritty;
   "Mod+B".spawn-sh = lib.getExe pkgs.brave;
   "Mod+Q".close-window = _: { };
-  "Mod+Space".spawn-sh = "${lib.getExe self'.packages.noctalia-wrapped} ipc call launcher toggle";
+  "Mod+Space".spawn-sh = "${noctalia} ipc call launcher toggle";
   "Mod+Tab".toggle-overview = { };
 
   ### Focus movement (arrows) ###
@@ -63,47 +66,15 @@
   "Alt+Print".screenshot-window = { };
 
   ## Shortcuts ###
-  "XF86AudioRaiseVolume".spawn-sh = [
-    "noctalia"
-    "msg"
-    "volume-up"
-  ];
-  "XF86AudioLowerVolume".spawn-sh = [
-    "noctalia"
-    "msg"
-    "volume-down"
-  ];
-  "XF86AudioMute".spawn-sh = [
-    "noctalia"
-    "msg"
-    "volume-mute"
-  ];
+  "XF86AudioRaiseVolume".spawn-sh = "${noctalia} msg volume-up";
+  "XF86AudioLowerVolume".spawn-sh = "${noctalia} msg volume-down";
+  "XF86AudioMute".spawn-sh = "${noctalia} msg volume-mute";
 
-  "XF86MonBrightnessUp".spawn-sh = [
-    "noctalia"
-    "msg"
-    "brightness-up"
-  ];
-  "XF86MonBrightnessDown".spawn-sh = [
-    "noctalia"
-    "msg"
-    "brightness-down"
-  ];
+  "XF86MonBrightnessUp".spawn-sh = "${noctalia} msg brightness-up";
+  "XF86MonBrightnessDown".spawn-sh = "${noctalia} msg brightness-down";
 
-  "XF86Bluetooth".spawn-sh = [
-    "noctalia"
-    "msg"
-    "bluetooth-toggle"
-  ];
-  "XF86WLAN".spawn-sh = [
-    "noctalia"
-    "msg"
-    "wifi-toggle"
-    "&&"
-    "noctalia"
-    "msg"
-    "bluetooth-toggle"
-  ];
+  "XF86Bluetooth".spawn-sh = "${noctalia} msg bluetooth-toggle";
+  "XF86WLAN".spawn-sh = "${noctalia} msg wifi-toggle && ${noctalia} msg bluetooth-toggle";
 
   ### Session / system ###
   #"Mod+Shift+E".quit = { };
