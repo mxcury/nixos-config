@@ -63,6 +63,15 @@
   "Alt+Print".screenshot-window = { };
 
   ### Shortcuts ###
+  "XF86AudioRaiseVolume".action.spawn = [ "noctalia" "msg" "volume-up" ];
+  "XF86AudioLowerVolume".action.spawn = [ "noctalia" "msg" "volume-down" ];
+  "XF86AudioMute".action.spawn        = [ "noctalia" "msg" "volume-mute" ];
+
+  "XF86MonBrightnessUp".action.spawn   = [ "noctalia" "msg" "brightness-up" ];
+  "XF86MonBrightnessDown".action.spawn = [ "noctalia" "msg" "brightness-down" ];
+
+  "XF86Bluetooth".action.spawn = [ "noctalia" "msg" "bluetooth-toggle" ];
+  "XF86WLAN".action.spawn      = [ "noctalia" "msg" "wifi-toggle" "&&" "noctalia" "msg" "bluetooth-toggle" ];
 
   ### Session / system ###
   #"Mod+Shift+E".quit = { };
