@@ -1,10 +1,17 @@
 { self, inputs, ... }: {
-  flake.nixosModules.niri = { pkgs, lib, ... }: {
-    programs.niri = {
-      enable = true;
-      package = self.packages.${pkgs.stdenv.hostPlatform.system}.niri-wrapped;
+  flake.nixosModules.niri =
+    {
+      pkgs,
+      lib,
+      config,
+      ...
+    }:
+    {
+      programs.niri = {
+        enable = true;
+        package = self.packages.${pkgs.stdenv.hostPlatform.system}.niri-wrapped;
+      };
     };
-  };
 
   perSystem =
     {
@@ -23,7 +30,14 @@
 
           environment."LIBGL_ALWAYS_SOFTWARE" = "1";
           xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
-          input.keyboard.xkb.layout = "us,ua";
+          input = {
+            keyboard.xkb.layout = "${config.services.xserver.xkb.layout},us";
+            touchpad = {
+              tap = true;
+              natural-scroll = true;
+              click-method = "clickfinger";
+            };
+          };
           hotkey-overlay.skip-at-startup = true;
 
           blur = {

@@ -62,6 +62,8 @@
   "Ctrl+Print".screenshot-screen = { };
   "Alt+Print".screenshot-window = { };
 
+  ### Shortcuts ###
+
   ### Session / system ###
   #"Mod+Shift+E".quit = { };
   #"Mod+Escape".toggle-keyboard-shortcuts-inhibit = { allow-inhibiting = false; };
