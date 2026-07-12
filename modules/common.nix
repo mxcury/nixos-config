@@ -3,7 +3,7 @@
     imports = [
       self.nixosModules.greetd
       self.nixosModules.homeManagerSetup
-      #      self.nixosModules.steam
+      self.nixosModules.steam
     ];
 
     nix.settings.experimental-features = [

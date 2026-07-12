@@ -10,8 +10,6 @@
 
     nvf.url = "github:NotAShelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
-
-    #    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
   };
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }
