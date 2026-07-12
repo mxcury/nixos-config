@@ -28,6 +28,11 @@
             expandtab = true;
           };
 
+          clipboard = {
+            enable = true;
+            providers.wl-copy.enable = true;
+          };
+
           theme.enable = false;
           binds.whichKey.enable = true;
           globals.mapleader = " ";
