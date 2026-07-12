@@ -1,22 +1,26 @@
 { self, inputs, ... }: {
 
-  flake.nixosModules.vmConfiguration = { pkgs, lib, ... }: {
+  flake.nixosModules.nixosConfiguration = { pkgs, lib, ... }: {
     imports = [
-      self.nixosModules.vmHardware
+      self.nixosModules.nixosHardware
       self.nixosModules.common
     ];
   
-    boot.loader.grub.enable = true;
-    boot.loader.grub.device = "/dev/sda";
-    boot.loader.grub.useOSProber = true;
-    boot.loader.grub.fsIdentifier = "provided";
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
 
-    networking.hostName = "vm";
+    networking.hostName = "nixos";
 
-    programs.nh.flake = "/home/dev/.dotfiles/nixos";
+    programs.nh.flake = "/home/dev/nixos-config";
     environment.sessionVariables = {
-      FLAKE = "/home/dev/.dotfiles/nixos";
+      FLAKE = "/home/dev/nixos-config";
     };
+
+    services.xserver.xkb = {
+      layout = "gb";
+      variant = "";
+    };
+    console.keyMap = "uk";
 
     time.timeZone = "Europe/London";
 
