@@ -1,6 +1,6 @@
 { self, inputs, ... }: {
 
-  flake.nixosModules.vmHardware =
+  flake.nixosModules.nixosHardware =
     {
       config,
       lib,
@@ -14,40 +14,32 @@
       ];
 
       boot.initrd.availableKernelModules = [
-        "ata_piix"
-        "ohci_pci"
-        "ehci_pci"
-        "ahci"
+        "xhci_pci"
+        "nvme"
+        "usb_storage"
         "sd_mod"
-        "sr_mod"
       ];
       boot.initrd.kernelModules = [ ];
-      boot.kernelModules = [ ];
+      boot.kernelModules = [ "kvm-intel" ];
       boot.extraModulePackages = [ ];
 
       fileSystems."/" = {
-        device = "/dev/disk/by-uuid/ef7282aa-55a9-4289-b570-7627f09da865";
-        fsType = "btrfs";
+        device = "/dev/disk/by-uuid/9ab87773-65df-4915-9606-f4f74f682f0d";
+        fsType = "ext4";
       };
 
-      fileSystems."/home" = {
-        device = "/dev/disk/by-uuid/ef7282aa-55a9-4289-b570-7627f09da865";
-        fsType = "btrfs";
-        options = [ "subvol=home" ];
-      };
-
-      fileSystems."/nix" = {
-        device = "/dev/disk/by-uuid/ef7282aa-55a9-4289-b570-7627f09da865";
-        fsType = "btrfs";
-        options = [ "subvol=nix" ];
+      fileSystems."/boot" = {
+        device = "/dev/disk/by-uuid/BF61-0DE7";
+        fsType = "vfat";
+        options = [ "fmask=0077" "dmask=0077" ];
       };
 
       swapDevices = [
-        { device = "/dev/disk/by-uuid/dc0ff48e-37d2-46ed-954b-f505559c7c46"; }
+        { device = "/dev/disk/by-uuid/97dceaa2-16e2-40f6-82bd-dfc78848c0d5"; }
       ];
 
       nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-      virtualisation.virtualbox.guest.enable = true;
+      hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     };
 
 }
