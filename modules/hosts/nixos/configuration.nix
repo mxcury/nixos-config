@@ -23,6 +23,7 @@
           self.packages.${pkgs.stdenv.hostPlatform.system}.noctalia-wrapped
         }/bin/noctalia-shell";
         id_bin = "${pkgs.coreutils}/bin/id";
+        timeout_bin = "${pkgs.coreutils}/bin/timeout";
       };
     };
 
