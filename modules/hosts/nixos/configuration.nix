@@ -16,18 +16,6 @@
       FLAKE = "/home/dev/nixos-config";
     };
 
-    environment.etc."systemd/system-sleep/lock-noctalia" = {
-      mode = "0755";
-      source = pkgs.replaceVars ./lock-noctalia.sh {
-        noctalia_bin = "${
-          self.packages.${pkgs.stdenv.hostPlatform.system}.noctalia-wrapped
-        }/bin/noctalia-shell";
-        niri_bin = "${self.packages.${pkgs.stdenv.hostPlatform.system}.niri-wrapped}/bin/niri";
-        id_bin = "${pkgs.coreutils}/bin/id";
-        timeout_bin = "${pkgs.coreutils}/bin/timeout";
-      };
-    };
-
     services.xserver.xkb = {
       layout = "gb";
       variant = "";
