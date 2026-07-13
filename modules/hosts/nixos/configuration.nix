@@ -22,6 +22,7 @@
         noctalia_bin = "${
           self.packages.${pkgs.stdenv.hostPlatform.system}.noctalia-wrapped
         }/bin/noctalia-shell";
+        niri_bin = "${self.packages.${pkgs.stdenv.hostPlatform.system}.niri-wrapped}/bin/niri";
         id_bin = "${pkgs.coreutils}/bin/id";
         timeout_bin = "${pkgs.coreutils}/bin/timeout";
       };
