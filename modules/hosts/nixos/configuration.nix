@@ -19,7 +19,11 @@
     environment.etc."systemd/system-sleep/lock-noctalia" = {
       mode = "0755";
       source = pkgs.replaceVars ./lock-noctalia.sh {
-        noctalia_bin = "${self.packages.${pkgs.stdenv.hostPlatform.system}.noctalia-wrapped}/bin/noctalia-shell";
+        noctalia_bin = "${
+          self.packages.${pkgs.stdenv.hostPlatform.system}.noctalia-wrapped
+        }/bin/noctalia-shell";
+      };
+    };
 
     services.xserver.xkb = {
       layout = "gb";
