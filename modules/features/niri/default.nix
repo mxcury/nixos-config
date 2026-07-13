@@ -28,7 +28,7 @@
             (lib.getExe self'.packages.noctalia-wrapped)
           ];
 
-          environment."LIBGL_ALWAYS_SOFTWARE" = "1";
+          #environment."LIBGL_ALWAYS_SOFTWARE" = "1";
           xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
           input = {
             keyboard.xkb.layout = "gb,us";
