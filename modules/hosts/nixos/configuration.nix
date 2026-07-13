@@ -16,6 +16,11 @@
       FLAKE = "/home/dev/nixos-config";
     };
 
+    environment.etc."systemd/system-sleep/lock-noctalia" = {
+      mode = "0755";
+      source = ./lock-noctalia.sh;
+    };
+
     services.xserver.xkb = {
       layout = "gb";
       variant = "";
