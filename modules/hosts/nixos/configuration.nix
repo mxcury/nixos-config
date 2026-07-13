@@ -23,7 +23,6 @@
           self.packages.${pkgs.stdenv.hostPlatform.system}.noctalia-wrapped
         }/bin/noctalia-shell";
         id_bin = "${pkgs.coreutils}/bin/id";
-        su_bin = "${pkgs.shadow}/bin/su";
       };
     };
 
