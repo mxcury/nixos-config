@@ -10,6 +10,9 @@
 
     nvf.url = "github:NotAShelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
+
+    yazi-plugins.url = "github:yazi-rs/plugins";
+    yazi-plugins.flake = false;
   };
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }

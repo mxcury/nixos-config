@@ -16,9 +16,25 @@
         };
       };
 
+      plugins = {
+        mount = inputs.yazi-plugins + "/mount.yazi";
+      };
+
       keymap = {
         mgr.prepend_keymap = [
-          { on = [ "g" "h" ]; run = "cd ~"; desc = "Go home"; }
+          {
+            on = [
+              "g"
+              "h"
+            ];
+            run = "cd ~";
+            desc = "Go home";
+          }
+          {
+            on = [ "M" ];
+            run = "plugin mount";
+            desc = "Mount/unmount/eject disks";
+          }
         ];
       };
     };
@@ -32,6 +48,8 @@
       poppler-utils
       unar
       jq
+      udisks2 # provides udisksctl, used by the mount plugin
+      util-linux # provides lsblk (usually already present, but explicit is fine)
     ];
 
     home.sessionVariables = {
